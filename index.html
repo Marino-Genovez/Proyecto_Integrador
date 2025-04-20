@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Samana Café</title>
+  <link rel="shortcut icon" href="resources/taza-de-cafe.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    <h2>
+      <img src="resources/granos-de-cafe.png" alt="Logo del Café" class="logo">
+      Samana Café
+    </h2>
+  </div>
+
+  <!-- Overlay para cerrar el menú al hacer clic fuera -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- Menú lateral -->
+  <div class="side-menu" id="menu">
+    <a href="#" class="carta">
+      <span class="icono">🍽️</span>
+      <span>Carta</span>
+    </a>
+    <a href="#" class="Ini_ses">
+      <span class="icono">🔐</span>
+      <span>Iniciar sesión</span>
+    </a>
+    <a href="#" class="ges_car">
+      <span class="icono">📝</span>
+      <span>Gestionar Carta</span>
+    </a>
+    <a href="#" class="Sob_nos">
+      <span class="icono">👥</span>
+      <span>Sobre nosotros</span>
+    </a>
+  </div>
+
+  <script>
+    const menu = document.getElementById('menu');
+    const overlay = document.getElementById('menuOverlay');
+
+    function toggleMenu() {
+      menu.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+
+    overlay.addEventListener('click', () => {
+      menu.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>

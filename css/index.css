@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #bd8e55;
+  color: #4B3621;
+}
+
+/* Header */
+.header {
+  background-color: #6F4E37;
+  color: #ECE0D1;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin-right: 1rem;
+  color: #ECE0D1;
+}
+
+/* Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Menú lateral */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  width: 250px;
+  background-color: #4B3621;
+  overflow-x: hidden;
+  transition: 0.4s;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.side-menu.active {
+  left: 0;
+}
+
+.side-menu a {
+  color: #ECE0D1;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+  transition: background-color 0.3s;
+}
+
+.side-menu a:not(:last-child)::after {
+  content: "|";
+  margin-left: auto;
+  color: #A67B5B;
+}
+
+/* Delay por botón para animación en cascada */
+.side-menu a:nth-child(1) { animation-delay: 0.1s; }
+.side-menu a:nth-child(2) { animation-delay: 0.2s; }
+.side-menu a:nth-child(3) { animation-delay: 0.3s; }
+.side-menu a:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+/* Iconos */
+.icono {
+  font-size: 1.3rem;
+}
+
+/* Hover */
+.side-menu a:hover {
+  background-color: #A67B5B;
+  color: #fff;
+}
+.logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
